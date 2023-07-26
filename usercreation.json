@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tenantName": {
+      "type": "string",
+      "metadata": {
+        "description": "FQDN."
+      }
+    },
+    "deploymentid": {
+      "type": "string",
+      "metadata": {
+        "description": "user id"
+      }
+    },
+    "azureUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Azure UserName."
+      }
+    },
+    "azurePassword": {
+      "type": "string",
+      "metadata": {
+        "description": "Azure User Password."
+      }
+    }
+  },
+  "variables": {
+    "username1": "[concat('odl_user_', parameters('deploymentid'), '_01', '@', parameters('tenantName') )]",
+    "user1Password": "[concat(parameters('azurePassword'), '1')]",
+    "username2": "[concat('odl_user_', parameters('deploymentid'), '_02', '@', parameters('tenantName') )]",
+    "user2Password": "[concat(parameters('azurePassword'), '2')]"
+  },
+  "resources": [
+  ],
+  "outputs": {
+    "azureUsername": {
+      "type": "string",
+      "value": "[parameters('azureUsername')]"
+    },
+    "azurePassword": {
+      "type": "string",
+      "value": "[parameters('azurePassword')]"
+    },
+    "User 01 UPN": {
+      "type": "string",
+      "value": "[variables('username1')]"
+    },
+    "User 01 Password": {
+      "type": "string",
+      "value": "[variables('user1Password')]"
+    },
+    "User 02 UPN": {
+      "type": "string",
+      "value": "[variables('username2')]"
+    },
+    "User 02 Password": {
+      "type": "string",
+      "value": "[variables('user2Password')]"
+    }
+  }
+  }
