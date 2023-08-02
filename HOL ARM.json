@@ -168,7 +168,7 @@
             "typeHandlerVersion": "1.8",
             "autoUpgradeMinorVersion": true,
             "settings": {
-              "fileUris": ["https://demostorages18.blob.core.windows.net/demo188/installll.ps1"
+              "fileUris": ["https://raw.githubusercontent.com/sujnanpatil/Templates/main/installll.ps1"
                 
               ]
             },
